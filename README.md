@@ -1,15 +1,27 @@
-# Django Ecommerce
+# Django E-commerce Website
 
-An ecommerce project built with Django.
-
-## Setup
-
-1. Create virtual environment
-2. Install requirements
-3. Add .env file
-4. Run server
+A basic E-commerce web application built with Django. It includes core features like product browsing, cart management, and user authentication.
 
 ## Features
-- Stripe integration
-- Google login
-- Cart system
+
+* Product listing
+* Shopping cart
+* User authentication
+* Basic checkout
+
+## Tech Stack
+
+* Django (Python)
+* HTML, CSS, JavaScript
+* SQLite
+
+## Installation
+
+git clone https://github.com/Riya18singh/Ecommerce.git
+cd Ecommerce
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
