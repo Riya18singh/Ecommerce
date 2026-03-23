@@ -1,0 +1,15 @@
+# Django Ecommerce
+
+An ecommerce project built with Django.
+
+## Setup
+
+1. Create virtual environment
+2. Install requirements
+3. Add .env file
+4. Run server
+
+## Features
+- Stripe integration
+- Google login
+- Cart system
