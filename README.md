@@ -14,20 +14,3 @@ A basic E-commerce web application built with Django. It includes core features 
 * Django (Python)
 * HTML, CSS, JavaScript
 * SQLite
-
-## Installation
-
-git clone https://github.com/Riya18singh/Ecommerce.git
-
-cd Ecommerce
-
-python -m venv venv
-
-source venv/bin/activate
-
-pip install -r requirements.txt
-
-python manage.py migrate
-
-python manage.py runserver
-
