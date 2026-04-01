@@ -1,0 +1,2 @@
+*.html linguist-vendored
+templates/* linguist-vendored
