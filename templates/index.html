@@ -528,12 +528,63 @@
 		</div>
 	</section>
 
+<div style="position: fixed; bottom: 20px; right: 20px; width: 320px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); padding: 10px;">
+    
+    <div id="chatbox" style="height: 250px; overflow-y: scroll; padding: 5px;">
+    </div>
+
+    <input type="text" id="userInput" placeholder="Ask about products..." style="width: 70%; padding: 5px;">
+    <button onclick="sendMessage()" style="padding: 5px 10px;">Send</button>
+</div>
 
 
+<script>
+function sendMessage() {
+    let input = document.getElementById("userInput").value;
 
+    fetch(`/store/chatbot/?q=${input}`)
+    .then(response => response.json())
+    .then(data => {
+        let chatbox = document.getElementById("chatbox");
+
+        // User message
+        chatbox.innerHTML += `<div style="text-align:right; margin:5px;">
+            <span style="background:#007bff; color:white; padding:5px 10px; border-radius:10px;">
+                ${input}
+            </span>
+        </div>`;
+
+        // Bot response
+        if (typeof data.response === "string") {
+            chatbox.innerHTML += `<div style="text-align:left; margin:5px;">
+                <span style="background:#e4e6eb; padding:5px 10px; border-radius:10px;">
+                    ${data.response}
+                </span>
+            </div>`;
+        } else {
+            data.response.forEach(product => {
+                chatbox.innerHTML += `<div style="text-align:left; margin:5px;">
+                    <div style="background:#e4e6eb; padding:8px; border-radius:10px;">
+                        <b>${product.name}</b><br>
+                        ₹${product.price}<br>
+                        ${product.description}
+                    </div>
+                </div>`;
+            });
+        }
+
+        chatbox.scrollTop = chatbox.scrollHeight;
+        document.getElementById("userInput").value = "";
+    });
+}
+</script>
 	
 
 	{% endblock content %}
+
+
+
+
 
 
 	

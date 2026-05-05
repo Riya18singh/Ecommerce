@@ -1,0 +1,22 @@
+[project]
+name = "ecommerce"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "defusedxml==0.6.0",
+    "django==2.2.4",
+    "django-allauth==0.51.0",
+    "django-countries==7.6.1",
+    "django-crispy-forms==1.7.2",
+    "oauthlib==3.1.0",
+    "pillow==6.1.0",
+    "psycopg2==2.8.3",
+    "python-dotenv>=1.0.1",
+    "python3-openid==3.1.0",
+    "requests==2.22.0",
+    "requests-oauthlib==1.2.0",
+    "setuptools>=75.3.4",
+    "stripe==2.37.1",
+]
